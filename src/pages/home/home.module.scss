@@ -1,0 +1,25 @@
+@import '../../styles/variables';
+
+.AboutButton {
+    position: fixed;
+    top: 80vh;
+    left: 50%;
+    background-color: transparent;
+    border: none;
+    border-radius: 10px;
+    color: $color-primary;
+    text-align: center;
+    display: inline-block;
+    font-size: 4rem;
+    cursor: pointer;
+    animation: pulse 2s infinite;
+    &:hover {
+        color: darken($color-primary, 20%);
+    }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.3); }
+    100% { transform: scale(1); }
+}

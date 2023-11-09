@@ -1,0 +1,49 @@
+@import '../../styles/variables.scss';
+
+.MainContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    .TheO {
+        width: 55px;
+        height: 55px;
+        background-color: $color-primary;
+        border-radius: 50%;
+        margin-right: 0.5rem;
+        transition: all 0.5s ease-in-out;
+
+        &:hover {
+            cursor: pointer;
+            border: 3px solid lighten($color-primary, 100%);
+        }
+    }
+
+    .TheOExpanded {
+        // width: 1000px;
+        // height: 500px;
+        display: flex;
+        background-color: darken($color-background, 3%);
+        border-radius: 20%;
+        margin-right: 0.5rem;
+        transition: all 0.5s ease-in-out;
+        overflow: hidden;
+        scrollbar-width: none;
+    
+        .ExpandedText {
+            width: 100%;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-radius: 20%;
+            color: $color-primary;
+            overflow: hidden;
+            scrollbar-width: auto;
+            white-space: wrap;
+            word-wrap: break-word;
+        }
+    }
+}
