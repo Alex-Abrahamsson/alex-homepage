@@ -3,6 +3,9 @@ import Style from './topComponent.module.scss';
 import ScrollingText from '../scrollingText/scrollingText';
 import Eye from '../eye/eye';
 import AboutText from '../aboutText/aboutText';
+import loomLight from '../../assets/LoomeMock.png';
+import loomDark from '../../assets/LoomDark.png';
+import store from '../../assets/Store.png';
 
 interface ITopComponent {
     WelcomeText: boolean;
@@ -55,6 +58,27 @@ export default function TopComponent({ WelcomeText, TopRow, BottomRow, Opacity =
         </div>
     ;
 
+    const portfolioSection: ReactNode =
+        <div style={{ display: 'flex', width: '100%', height: '100%', justifyContent: 'center', flexDirection: 'column', textAlign: 'left' }}>
+            <h2 style={{ textAlign: 'center'}}>Portfolio</h2>
+            <div style={{ display: 'flex', flexDirection: 'row' }}>
+                <div style={{ display: 'flex', flexDirection: 'column', margin: '0 20px' }}>
+                    <h3 style={{ textAlign: 'center' }}>Loomer</h3>
+                    <div style={{ display: 'flex', flexDirection: 'row' }}>
+                        <img src={loomLight} alt='placeholder' height={350} style={{ margin: '4px'}} />
+                        <img src={loomDark} alt='placeholder' height={350} style={{ margin: '4px'}} />
+                    </div>
+                </div>
+                <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignContent: 'center', margin: '0 20px' }}>
+                    <h3 style={{ textAlign: 'center' }}>StoreManager</h3>
+                    <div style={{ display: 'flex', flexDirection: 'row' }}>
+                        <img src={store} alt='placeholder' height={350} style={{ margin: '4px'}} />
+                    </div>
+                </div>
+            </div>
+        </div>
+    ;
+
     const contactSection: ReactNode = 
         <div style={{ display: 'flex', width: '100%', height: '100%', justifyContent: 'center', flexDirection: 'column', textAlign: 'left' }}>
             <h3 style={{ textAlign: 'center'}}>Kontakt</h3>
@@ -80,7 +104,7 @@ export default function TopComponent({ WelcomeText, TopRow, BottomRow, Opacity =
             <div className={Style.MainContainer} style={{ opacity: Opacity, pointerEvents: Opacity === 1 ? 'auto' : 'none' }}>
                 <div className={Style.TextContainer}>
                     <AboutText beforeO='AB' afterO='UT' onClick={() => handleClick(0)} expanded={expanded[0]} hiddenPage={aboutSection} oHeight={500} oWidth={1000}/>
-                    <AboutText beforeO='PORTF' afterO='LIO' onClick={() => handleClick(1)} expanded={expanded[1]}/>
+                    <AboutText beforeO='PORTF' afterO='LIO' onClick={() => handleClick(1)} expanded={expanded[1]} hiddenPage={portfolioSection} oHeight={520} oWidth={700}/>
                     <AboutText beforeO='C' afterO='NTACT' onClick={() => handleClick(2)} expanded={expanded[2]} hiddenPage={contactSection}/>
                 </div>
             </div>
