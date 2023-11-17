@@ -1,6 +1,7 @@
-import React, { ReactNode, useEffect, useState } from 'react';
+import React, { ReactNode, useState } from 'react';
 import Style from './topComponent.module.scss';
 import ScrollingText from '../scrollingText/scrollingText';
+import 'bootstrap-icons/font/bootstrap-icons.css';
 import Eye from '../eye/eye';
 import AboutText from '../aboutText/aboutText';
 import loomLight from '../../assets/LoomeMock.png';
@@ -80,24 +81,34 @@ export default function TopComponent({ WelcomeText, TopRow, BottomRow, Opacity =
     ;
 
     const contactSection: ReactNode = 
-        <div style={{ display: 'flex', width: '100%', height: '100%', justifyContent: 'center', flexDirection: 'column', textAlign: 'left' }}>
-            <h3 style={{ textAlign: 'center'}}>Kontakt</h3>
-            <div style={{ display: 'flex', width: '100%', height: '100%', justifyContent: 'space-around', flexDirection: 'row' }}>
-                <p>
-                    <a href='mailto:alex.abrahamsson@gmail.com'>✉️</a>
-                </p>
-                <p>
-                    <a href='tel:070-0000000'>📞</a>
-                </p>
-                <p>
-                    <a href='https://www.linkedin.com/in/alexander-abrahamsson-60ab83220/' target='_blank' rel='noopener'>🔗</a>
-                </p>
-                <p>
-                    <a href='https://github.com/Alex-Abrahamsson' target='_blank' rel='noopener'>🐱</a>
-                </p>
-            </div>
+    <div style={{ display: 'flex', width: '100%', height: '100%', justifyContent: 'center', flexDirection: 'column', textAlign: 'left' }}>
+        <h3 style={{ textAlign: 'center'}}>Kontakt</h3>
+        <form action="mailto:alex.abrahamsson@gmail.com" method="post" encType="text/plain">
+            Name:<br/>
+            <input type="text" name="name"/><br/>
+            E-mail:<br/>
+            <input type="text" name="mail"/><br/>
+            Comment:<br/>
+            <input type="text" name="comment" size={50}/><br/><br/>
+            <input type="submit" value="Send"/>
+            <input type="reset" value="Reset"/>
+        </form>
+        <div style={{ display: 'flex', width: '100%', height: '100%', justifyContent: 'space-around', flexDirection: 'row' }}>
+            <p>
+                <a href='mailto:alex.abrahamsson@gmail.com'><i className="bi bi-envelope"></i></a>
+            </p>
+            <p>
+                <a href='mailto:alex.abrahamsson@gmail.com'><i className="bi bi-facebook"></i></a>
+            </p>
+            <p>
+                <a href='mailto:alex.abrahamsson@gmail.com'><i className="bi bi-linkedin"></i></a>
+            </p>
+            <p>
+                <a href='mailto:alex.abrahamsson@gmail.com'><i className="bi bi-github"></i></a>
+            </p>
         </div>
-    ;
+    </div>
+;
     
     if (!WelcomeText) {
         return (
@@ -105,7 +116,7 @@ export default function TopComponent({ WelcomeText, TopRow, BottomRow, Opacity =
                 <div className={Style.TextContainer}>
                     <AboutText beforeO='AB' afterO='UT' onClick={() => handleClick(0)} expanded={expanded[0]} hiddenPage={aboutSection} oHeight={500} oWidth={1000}/>
                     <AboutText beforeO='PORTF' afterO='LIO' onClick={() => handleClick(1)} expanded={expanded[1]} hiddenPage={portfolioSection} oHeight={520} oWidth={700}/>
-                    <AboutText beforeO='C' afterO='NTACT' onClick={() => handleClick(2)} expanded={expanded[2]} hiddenPage={contactSection}/>
+                    <AboutText beforeO='C' afterO='NTACT' onClick={() => handleClick(2)} expanded={expanded[2]} hiddenPage={contactSection} oHeight={300} oWidth={500}/>
                 </div>
             </div>
         );
