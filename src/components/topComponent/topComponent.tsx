@@ -26,7 +26,7 @@ export default function TopComponent({ WelcomeText, TopRow, BottomRow, Opacity =
     };
 
     const aboutSection: ReactNode = 
-        <div style={{ display: 'flex', width: '100%', height: '100%', justifyContent: 'center', flexDirection: 'column', textAlign: 'left' }}>
+        <div style={{ display: 'flex', width: '95%', height: '90%', justifyContent: 'center', flexDirection: 'column', textAlign: 'left' }}>
             <h3 style={{ textAlign: 'center'}}>Vem är jag?</h3>
             <p>Jag tycker verkligen om programmering och det har bara växt sig
                 starkare med åren. Det började med ett intresse för datorer
@@ -60,20 +60,20 @@ export default function TopComponent({ WelcomeText, TopRow, BottomRow, Opacity =
     ;
 
     const portfolioSection: ReactNode =
-        <div style={{ display: 'flex', width: '100%', height: '100%', justifyContent: 'center', flexDirection: 'column', textAlign: 'left' }}>
-            <h2 style={{ textAlign: 'center'}}>Portfolio</h2>
-            <div style={{ display: 'flex', flexDirection: 'row' }}>
-                <div style={{ display: 'flex', flexDirection: 'column', margin: '0 20px' }}>
-                    <h3 style={{ textAlign: 'center' }}>Loomer</h3>
-                    <div style={{ display: 'flex', flexDirection: 'row' }}>
-                        <img src={loomLight} alt='placeholder' height={350} style={{ margin: '4px'}} />
-                        <img src={loomDark} alt='placeholder' height={350} style={{ margin: '4px'}} />
+        <div className={Style.PortfolioContainer}>
+            <h2 className={Style.CenterText}>Portfolio</h2>
+            <div className={Style.Row}>
+                <div className={Style.Col}>
+                    <h3 className={Style.CenterText}>Loomer</h3>
+                    <div className={Style.Row}>
+                        <img src={loomLight} alt='placeholder' height={350} className={Style.MyImg} />
+                        <img src={loomDark} alt='placeholder' height={350} className={Style.MyImg} />
                     </div>
                 </div>
-                <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignContent: 'center', margin: '0 20px' }}>
-                    <h3 style={{ textAlign: 'center' }}>StoreManager</h3>
-                    <div style={{ display: 'flex', flexDirection: 'row' }}>
-                        <img src={store} alt='placeholder' height={350} style={{ margin: '4px'}} />
+                <div className={Style.StoreImgContainer}>
+                    <h3 className={Style.CenterText}>StoreManager</h3>
+                    <div className={Style.Row}>
+                        <img src={store} alt='placeholder' height={350} className={Style.MyImg} />
                     </div>
                 </div>
             </div>
@@ -114,7 +114,7 @@ export default function TopComponent({ WelcomeText, TopRow, BottomRow, Opacity =
         return (
             <div className={Style.MainContainer} style={{ opacity: Opacity, pointerEvents: Opacity === 1 ? 'auto' : 'none' }}>
                 <div className={Style.TextContainer}>
-                    <AboutText beforeO='AB' afterO='UT' onClick={() => handleClick(0)} expanded={expanded[0]} hiddenPage={aboutSection} oHeight={500} oWidth={1000}/>
+                    <AboutText beforeO='AB' afterO='UT' onClick={() => handleClick(0)} expanded={expanded[0]} hiddenPage={aboutSection} oHeight={550} oWidth={1000}/>
                     <AboutText beforeO='PORTF' afterO='LIO' onClick={() => handleClick(1)} expanded={expanded[1]} hiddenPage={portfolioSection} oHeight={520} oWidth={700}/>
                     <AboutText beforeO='C' afterO='NTACT' onClick={() => handleClick(2)} expanded={expanded[2]} hiddenPage={contactSection} oHeight={300} oWidth={500}/>
                 </div>
