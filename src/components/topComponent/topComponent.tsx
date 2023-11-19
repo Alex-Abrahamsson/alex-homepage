@@ -83,29 +83,19 @@ export default function TopComponent({ WelcomeText, TopRow, BottomRow, Opacity =
     const contactSection: ReactNode = 
     <div style={{ display: 'flex', width: '100%', height: '100%', justifyContent: 'center', flexDirection: 'column', textAlign: 'left' }}>
         <h3 style={{ textAlign: 'center'}}>Kontakt</h3>
-        <form action="mailto:alex.abrahamsson@gmail.com" method="post" encType="text/plain">
-            Name:<br/>
-            <input type="text" name="name"/><br/>
-            E-mail:<br/>
-            <input type="text" name="mail"/><br/>
-            Comment:<br/>
-            <input type="text" name="comment" size={50}/><br/><br/>
-            <input type="submit" value="Send"/>
-            <input type="reset" value="Reset"/>
-        </form>
         <div style={{ display: 'flex', width: '100%', height: '100%', justifyContent: 'space-around', flexDirection: 'row' }}>
-            <p>
-                <a href='mailto:alex.abrahamsson@gmail.com'><i className="bi bi-envelope"></i></a>
-            </p>
-            <p>
-                <a href='mailto:alex.abrahamsson@gmail.com'><i className="bi bi-facebook"></i></a>
-            </p>
-            <p>
-                <a href='mailto:alex.abrahamsson@gmail.com'><i className="bi bi-linkedin"></i></a>
-            </p>
-            <p>
-                <a href='mailto:alex.abrahamsson@gmail.com'><i className="bi bi-github"></i></a>
-            </p>
+            <a href='mailto:alex.abrahamsson@gmail.com'>
+                <i className="bi bi-envelope"></i>
+            </a>
+            <a href='https://www.facebook.com/alexander.abrahamsson.92'>
+                <i className="bi bi-facebook"></i>
+            </a>
+            <a href='https://www.linkedin.com/in/alexander-abrahamsson-60ab83220/'>
+                <i className="bi bi-linkedin"></i>
+            </a>
+            <a href='https://github.com/Alex-Abrahamsson'>
+                <i className="bi bi-github"></i>
+            </a>
         </div>
     </div>
 ;
@@ -116,7 +106,7 @@ export default function TopComponent({ WelcomeText, TopRow, BottomRow, Opacity =
                 <div className={Style.TextContainer}>
                     <AboutText beforeO='AB' afterO='UT' onClick={() => handleClick(0)} expanded={expanded[0]} hiddenPage={aboutSection} oHeight={550} oWidth={1000}/>
                     <AboutText beforeO='PORTF' afterO='LIO' onClick={() => handleClick(1)} expanded={expanded[1]} hiddenPage={portfolioSection} oHeight={520} oWidth={700}/>
-                    <AboutText beforeO='C' afterO='NTACT' onClick={() => handleClick(2)} expanded={expanded[2]} hiddenPage={contactSection} oHeight={300} oWidth={500}/>
+                    <AboutText beforeO='C' afterO='NTACT' onClick={() => handleClick(2)} expanded={expanded[2]} hiddenPage={contactSection} oHeight={150} oWidth={300}/>
                 </div>
             </div>
         );
