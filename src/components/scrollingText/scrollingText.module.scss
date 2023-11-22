@@ -19,3 +19,25 @@
         100% { transform: translateX(38%); }
     }
 }
+
+@media only screen and (max-width: 600px) {
+    .scrollingTextContainer {
+        overflow: hidden;
+        background-color: black;
+        border-radius: 20px;
+        display: flex;
+        flex-direction: row;
+        max-width: 300px;
+        h3 {
+            animation: scroll 40s linear infinite;
+            color: gold;
+            white-space: nowrap;
+            
+        }
+        @keyframes scroll {
+            0% { transform: translateX(38%); }
+            50% { transform: translateX(-100%); }
+            100% { transform: translateX(38%); }
+        }
+    }
+}

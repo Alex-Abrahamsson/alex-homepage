@@ -29,6 +29,38 @@
     }
 }
 
+.MobileMainContainer {
+    top: 50%;
+    left: 60%;
+    margin: auto;
+    transform: translate(-50%, -50%);
+    position: absolute;
+
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.5s ease-in-out;
+
+    .MobileTextContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        width: 100%;
+        max-width: 500px;
+
+        h1 {
+            color: $color-primary;
+            font-size: 3rem;
+            font-weight: 700;
+            letter-spacing: 0.6rem;
+            text-align: center;
+        }
+    }
+}
+
 .PortfolioContainer {
     display: flex;
     width: 100%;

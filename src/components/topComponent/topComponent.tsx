@@ -7,6 +7,7 @@ import AboutText from '../aboutText/aboutText';
 import loomLight from '../../assets/LoomeMock.png';
 import loomDark from '../../assets/LoomDark.png';
 import store from '../../assets/Store.png';
+import IsMobileLayout from '../../hooks/isMobileLayout';
 
 interface ITopComponent {
     WelcomeText: boolean;
@@ -16,6 +17,7 @@ interface ITopComponent {
 }
 
 export default function TopComponent({ WelcomeText, TopRow, BottomRow, Opacity = 1 }: ITopComponent) {
+    const isMobile = IsMobileLayout();
     const [expanded, setExpanded] = useState([false, false, false]);
 
     const handleClick = (index: number) => {
@@ -102,13 +104,18 @@ export default function TopComponent({ WelcomeText, TopRow, BottomRow, Opacity =
     
     if (!WelcomeText) {
         return (
-            <div className={Style.MainContainer} style={{ opacity: Opacity, pointerEvents: Opacity === 1 ? 'auto' : 'none' }}>
-                <div className={Style.TextContainer}>
-                    <AboutText beforeO='AB' afterO='UT' onClick={() => handleClick(0)} expanded={expanded[0]} hiddenPage={aboutSection} oHeight={550} oWidth={1000}/>
-                    <AboutText beforeO='PORTF' afterO='LIO' onClick={() => handleClick(1)} expanded={expanded[1]} hiddenPage={portfolioSection} oHeight={520} oWidth={700}/>
-                    <AboutText beforeO='C' afterO='NTACT' onClick={() => handleClick(2)} expanded={expanded[2]} hiddenPage={contactSection} oHeight={150} oWidth={300}/>
+            isMobile ?
+                <div className={Style.MobileMainContainer} style={{ opacity: Opacity, pointerEvents: Opacity === 1 ? 'auto' : 'none' }}>
+                    <h1>Mobileview not done yet</h1>
                 </div>
-            </div>
+            :
+                <div className={Style.MainContainer} style={{ opacity: Opacity, pointerEvents: Opacity === 1 ? 'auto' : 'none' }}>
+                    <div className={Style.TextContainer}>
+                        <AboutText beforeO='AB' afterO='UT' onClick={() => handleClick(0)} expanded={expanded[0]} hiddenPage={aboutSection} oHeight={550} oWidth={1000}/>
+                        <AboutText beforeO='PORTF' afterO='LIO' onClick={() => handleClick(1)} expanded={expanded[1]} hiddenPage={portfolioSection} oHeight={520} oWidth={700}/>
+                        <AboutText beforeO='C' afterO='NTACT' onClick={() => handleClick(2)} expanded={expanded[2]} hiddenPage={contactSection} oHeight={150} oWidth={300}/>
+                    </div>
+                </div>
         );
     }
 
@@ -117,15 +124,21 @@ export default function TopComponent({ WelcomeText, TopRow, BottomRow, Opacity =
         return null;
     }
 
+
     return (
-        <div className={Style.MainContainer} style={{ opacity: Opacity, pointerEvents: Opacity === 1 ? 'auto' : 'none' }}>
-            <div className={Style.TextContainer}>
-                <Eye height='25px' width='25px' left='64.5%' top='21.5%'/>
-                <h1>{TopRow}</h1>
-                <ScrollingText />
-                <Eye height='25px' width='25px' left='12%' top='78%'/>
-                <h1>{BottomRow}</h1>
+        isMobile ? 
+            <div className={Style.MobileMainContainer} style={{ opacity: Opacity, pointerEvents: Opacity === 1 ? 'auto' : 'none' }}>
+                <h1>Mobileview not done yet</h1>
             </div>
-        </div>
+        :
+            <div className={Style.MainContainer} style={{ opacity: Opacity, pointerEvents: Opacity === 1 ? 'auto' : 'none' }}>
+                <div className={Style.TextContainer}>
+                    <Eye height='25px' width='25px' left='64.5%' top='21.5%'/>
+                    <h1>{TopRow}</h1>
+                    <ScrollingText />
+                    <Eye height='25px' width='25px' left='12%' top='78%'/>
+                    <h1>{BottomRow}</h1>
+                </div>
+            </div>
     );
 }
