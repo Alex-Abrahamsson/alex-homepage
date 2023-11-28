@@ -5,7 +5,7 @@ export default function IsMobileLayout() {
 
     useEffect(() => {
         const resize = () => {
-            setIsMobile(window.innerWidth < 768);
+            setIsMobile(window.innerWidth < 850);
         };
         window.addEventListener('resize', resize);
         resize();

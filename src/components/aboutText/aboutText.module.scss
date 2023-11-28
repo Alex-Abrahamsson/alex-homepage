@@ -39,9 +39,52 @@
             border-radius: 20%;
             color: $color-primary;
             overflow: hidden;
-            scrollbar-width: auto;
+            scrollbar-width: none;
             white-space: wrap;
             word-wrap: break-word;
         }
     }
 }
+
+.MobileMainContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    transition: all 0.5s ease-in-out;
+
+    h1 {
+        margin: 8px 0;
+    }
+
+    .MobileExpandingContainer {
+        width: 100%;
+        transition: all 0.5s ease-in-out;
+        height: 0px;
+    }
+
+    .MobileExpandingContainerExpanded {
+        width: 100%;
+        transition: all 0.5s ease-in-out;
+        background-color: darken($color-background, 3%);
+        border-radius: 20px;
+    }
+
+    .MobileExpandedText {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: $color-primary;
+        overflow: hidden;
+        scrollbar-width: none;
+        white-space: wrap;
+        word-wrap: break-word;
+    }
+}
+

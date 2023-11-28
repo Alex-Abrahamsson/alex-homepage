@@ -35,7 +35,6 @@
     margin: auto;
     transform: translate(-50%, -50%);
     position: absolute;
-
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -44,12 +43,12 @@
 
     .MobileTextContainer {
         display: flex;
+        height: 95vh;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         align-content: center;
-        width: 100%;
-        max-width: 500px;
+        width: 95vw;
 
         h1 {
             color: $color-primary;
@@ -93,6 +92,44 @@
     }
 
     .MyImg {
+        margin: 4px;
+    }
+}
+
+.MobilePortfolioContainer {
+    display: flex;
+    width: 99%;
+    height: 99%;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: left;
+
+    .MobileCenterText {
+        text-align: center;
+    }
+
+    .Row {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .Col {
+        display: flex;
+        flex-direction: column;
+        margin: 0 20px 0 0;
+    }
+
+    .MobileStoreImgContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+    }
+
+    .MobileMyImg {
         margin: 4px;
     }
 }
