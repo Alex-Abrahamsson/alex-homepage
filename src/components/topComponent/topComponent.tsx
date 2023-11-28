@@ -29,7 +29,7 @@ export default function TopComponent({ WelcomeText, TopRow, BottomRow, Opacity =
 
     const aboutSection: ReactNode = isMobile ?
     <div style={{ display: 'flex', width: '90%', height: '100%', justifyContent: 'center', flexDirection: 'column', textAlign: 'left', overflow: 'scroll', scrollbarWidth: 'none', paddingTop: '190px' }}>
-        <h5 style={{ textAlign: 'center'}}>Vem är jag?</h5>
+        <h3 style={{ textAlign: 'center'}}>Vem är jag?</h3>
         <p style={{ fontSize: '0.8rem' }}>Jag tycker verkligen om programmering och det har bara växt sig
             starkare med åren. Det började med ett intresse för datorer
             och själva spelandet men det utvecklades sedan till att jag
@@ -46,7 +46,7 @@ export default function TopComponent({ WelcomeText, TopRow, BottomRow, Opacity =
             sökte mig in på yrkeshögskolan för att studera programmering -
             det har jag inte ångrat en sekund.
         </p>
-        <h5 style={{ textAlign: 'center'}}>Vad kan jag tillföra?</h5>
+        <h3 style={{ textAlign: 'center'}}>Vad kan jag tillföra?</h3>
         <p style={{ fontSize: '0.8rem' }}>
             Förutom mitt intresse för programmering och utveckling tar jag
             även med mig glädje och positivt tänkande. Jag är expert på att
