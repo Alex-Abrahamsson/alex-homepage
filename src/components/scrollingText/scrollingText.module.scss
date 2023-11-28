@@ -25,9 +25,10 @@
         overflow: hidden;
         background-color: black;
         border-radius: 20px;
-        display: flex;
+        display: flex;;
         flex-direction: row;
         max-width: 300px;
+        
         h3 {
             animation: scroll 40s linear infinite;
             color: gold;

@@ -128,7 +128,11 @@ export default function TopComponent({ WelcomeText, TopRow, BottomRow, Opacity =
     return (
         isMobile ? 
             <div className={Style.MobileMainContainer} style={{ opacity: Opacity, pointerEvents: Opacity === 1 ? 'auto' : 'none' }}>
-                <h1>Mobileview not done yet</h1>
+                <div className={Style.MobileTextContainer}>
+                    <h1>{TopRow}</h1>
+                    <ScrollingText />
+                    <h1>{BottomRow}</h1>
+                </div>
             </div>
         :
             <div className={Style.MainContainer} style={{ opacity: Opacity, pointerEvents: Opacity === 1 ? 'auto' : 'none' }}>
